@@ -5,12 +5,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --brand: #0e6cff; /* primary blue */
+  --brand-600: #0956c6;
+  --brand-700: #0748a5;
+  --muted: #6b7280;
+  --muted-foreground: #4b5563;
+  --surface: #f8fafc;
+  --ring: rgba(14, 108, 255, 0.35);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --surface: #0f1115;
+    --muted: #9ca3af;
+    --muted-foreground: #a3a3a3;
+    --brand: #5aa2ff;
+    --brand-600: #75b3ff;
+    --brand-700: #9cc9ff;
   }
 }
 
@@ -18,4 +31,41 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Layout helpers */
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+/* Focus styles */
+:where(a, button, input, select, textarea) {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+/* Header */
+.site-header {
+  @apply sticky top-0 z-40 w-full border-b border-black/5 dark:border-white/10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+}
+.site-nav-link {
+  @apply inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-black/80 dark:text-white/80 hover:text-black dark:hover:text-white hover:bg-black/[.04] dark:hover:bg-white/[.06] transition-colors;
+}
+.site-cta {
+  @apply inline-flex items-center justify-center rounded-full bg-[var(--brand)] text-white px-4 py-2 text-sm font-semibold hover:bg-[color:var(--brand-600)] active:bg-[color:var(--brand-700)] transition-colors;
+}
+
+/* Sections */
+.section {
+  @apply py-12 sm:py-16;
+}
+.section-muted {
+  @apply bg-[var(--surface)];
+}
+
+/* Cards */
+.card {
+  @apply rounded-xl border border-black/5 dark:border-white/10 bg-white dark:bg-neutral-900 shadow-sm;
+}
+.card-body {
+  @apply p-5;
 }
