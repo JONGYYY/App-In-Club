@@ -8,7 +8,7 @@ export default function Footer() {
 				<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					<div>
 						<div className="text-base font-bold tracking-tight">APP‑IN Club</div>
-						<p className="mt-3 text-sm text-black/70 dark:text-white/70 max-w-sm">
+						<p className="mt-3 text-sm text-muted max-w-sm">
 							A global student‑run organization promoting impact‑driven learning through app creation,
 							workshops, competitions, and community.
 						</p>
@@ -32,10 +32,10 @@ export default function Footer() {
 					<div>
 						<div className="text-sm font-semibold">Follow</div>
 						<div className="mt-3 flex gap-3">
-							<Link href="#" className="site-nav-link">Twitter</Link>
-							<Link href="#" className="site-nav-link">YouTube</Link>
-							<Link href="#" className="site-nav-link">Discord</Link>
-							<Link href="#" className="site-nav-link">LinkedIn</Link>
+							<Link href="#" className="site-nav-link hover:text-[color:var(--brand)]">Twitter</Link>
+							<Link href="#" className="site-nav-link hover:text-[color:var(--brand)]">YouTube</Link>
+							<Link href="#" className="site-nav-link hover:text-[color:var(--brand)]">Discord</Link>
+							<Link href="#" className="site-nav-link hover:text-[color:var(--brand)]">LinkedIn</Link>
 						</div>
 					</div>
 				</div>

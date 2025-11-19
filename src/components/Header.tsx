@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Container from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 
@@ -25,13 +26,17 @@ const nav = [
 export default function Header() {
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [openMenu, setOpenMenu] = useState<string | null>(null);
+	const pathname = usePathname();
+
+	const isActive = (href: string) => pathname === href;
+	const isPrograms = pathname?.startsWith("/programs");
 
 	return (
 		<header className="site-header">
 			<Container>
 				<div className="flex h-16 items-center justify-between gap-4">
 					<div className="flex items-center gap-6">
-						<Link href="/" className="text-base font-bold tracking-tight">
+						<Link href="/" className="text-base font-bold tracking-tight text-[color:var(--brand)]">
 							APP‑IN Club
 						</Link>
 						<nav className="hidden md:flex items-center gap-1">
@@ -39,7 +44,7 @@ export default function Header() {
 								item.children ? (
 									<div key={item.label} className="relative">
 										<button
-											className="site-nav-link"
+											className={`site-nav-link${isPrograms ? " text-[color:var(--brand)]" : ""}`}
 											aria-haspopup="menu"
 											aria-expanded={openMenu === item.label}
 											onClick={() => setOpenMenu(openMenu === item.label ? null : item.label)}
@@ -67,7 +72,11 @@ export default function Header() {
 										)}
 									</div>
 								) : (
-									<Link key={item.href} href={item.href} className="site-nav-link">
+									<Link
+										key={item.href}
+										href={item.href}
+										className={`site-nav-link${isActive(item.href) ? " text-[color:var(--brand)]" : ""}`}
+									>
 										{item.label}
 									</Link>
 								),
@@ -118,7 +127,13 @@ export default function Header() {
 										</div>
 									</div>
 								) : (
-									<Link key={item.href} href={item.href} className="px-3 py-2 rounded-md text-sm hover:bg-black/[.04] dark:hover:bg-white/[.06]">
+									<Link
+										key={item.href}
+										href={item.href}
+										className={`px-3 py-2 rounded-md text-sm hover:bg-black/[.04] dark:hover:bg-white/[.06]${
+											isActive(item.href) ? " text-[color:var(--brand)]" : ""
+										}`}
+									>
 										{item.label}
 									</Link>
 								),

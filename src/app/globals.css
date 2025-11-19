@@ -4,13 +4,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b3d7a; /* navy text */
   --brand: #0e6cff; /* primary blue */
   --brand-600: #0956c6;
   --brand-700: #0748a5;
-  --muted: #6b7280;
-  --muted-foreground: #4b5563;
-  --surface: #f8fafc;
+  --muted: #2457a6; /* muted blue */
+  --muted-foreground: #3b82f6; /* accent blue for subtle elements */
+  --surface: #eff6ff; /* light blue surface */
   --ring: rgba(14, 108, 255, 0.35);
 }
 
@@ -43,12 +43,30 @@ body {
   @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 focus-visible:ring-offset-background;
 }
 
+/* Selection */
+::selection {
+  color: #fff;
+  background: color-mix(in srgb, var(--brand) 70%, transparent);
+}
+
 /* Header */
 .site-header {
-  @apply sticky top-0 z-40 w-full border-b border-black/5 dark:border-white/10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+  @apply sticky top-0 z-40 w-full border-b backdrop-blur;
+  background-color: color-mix(in srgb, var(--background) 80%, transparent);
+  border-color: color-mix(in srgb, var(--brand) 25%, transparent);
+}
+@supports (backdrop-filter: blur(2px)) {
+  .site-header {
+    background-color: color-mix(in srgb, var(--background) 60%, transparent);
+  }
 }
 .site-nav-link {
-  @apply inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-black/80 dark:text-white/80 hover:text-black dark:hover:text-white hover:bg-black/[.04] dark:hover:bg-white/[.06] transition-colors;
+  @apply inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+  color: var(--foreground);
+}
+.site-nav-link:hover {
+  color: var(--brand);
+  background: var(--surface);
 }
 .site-cta {
   @apply inline-flex items-center justify-center rounded-full bg-[var(--brand)] text-white px-4 py-2 text-sm font-semibold hover:bg-[color:var(--brand-600)] active:bg-[color:var(--brand-700)] transition-colors;
@@ -62,10 +80,22 @@ body {
   @apply bg-[var(--surface)];
 }
 
+/* Hero */
+.hero-brand {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--brand) 6%, transparent), transparent 40%);
+}
+
 /* Cards */
 .card {
-  @apply rounded-xl border border-black/5 dark:border-white/10 bg-white dark:bg-neutral-900 shadow-sm;
+  @apply rounded-xl bg-white shadow-sm;
+  border: 1px solid color-mix(in srgb, var(--brand) 20%, transparent);
 }
 .card-body {
   @apply p-5;
+}
+
+/* Muted text helper */
+.text-muted {
+  color: color-mix(in srgb, var(--foreground) 75%, transparent);
 }
