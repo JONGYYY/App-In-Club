@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #eef6ff; /* light blue background */
   --foreground: #0b3d7a; /* navy text */
   --brand: #0e6cff; /* primary blue */
   --brand-600: #0956c6;
   --brand-700: #0748a5;
   --muted: #2457a6; /* muted blue */
   --muted-foreground: #3b82f6; /* accent blue for subtle elements */
-  --surface: #eff6ff; /* light blue surface */
+  --surface: #e7f1ff; /* lighter blue surface */
   --ring: rgba(14, 108, 255, 0.35);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* Force the same blue/light palette in dark-mode environments */
-    --background: #ffffff;
+    --background: #eef6ff;
     --foreground: #0b3d7a;
-    --surface: #eff6ff;
+    --surface: #e7f1ff;
     --muted: #2457a6;
     --muted-foreground: #3b82f6;
     --brand: #0e6cff;
@@ -30,7 +30,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(180deg, var(--background), color-mix(in srgb, var(--brand) 6%, #ffffff) 100%);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -84,7 +84,7 @@ body {
 /* Hero */
 .hero-brand {
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--brand) 6%, transparent), transparent 40%);
+    linear-gradient(180deg, color-mix(in srgb, var(--brand) 12%, transparent), transparent 45%);
 }
 
 /* Cards */
