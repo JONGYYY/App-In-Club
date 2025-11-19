@@ -23,6 +23,15 @@ export default function ContactPage() {
 						</a>
 					</li>
 				</ul>
+				<div className="mt-10">
+					<h2 className="text-xl font-semibold">Send us a message</h2>
+					<p className="text-sm text-muted mt-2">We usually reply within a few days.</p>
+					<div className="mt-4">
+						{/* @ts-expect-error Server/Client boundary handled by Next */}
+						{/* eslint-disable-next-line @next/next/no-sync-scripts */}
+						{require("@/components/ContactForm").ContactForm()}
+					</div>
+				</div>
 			</div>
 		</div>
 	);

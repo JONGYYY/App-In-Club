@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Container from "@/components/Container";
 import { LinkButton } from "@/components/Button";
@@ -20,6 +20,7 @@ const nav = [
 	{ label: "Members", href: "/members" },
 	{ label: "Team", href: "/team" },
 	{ label: "Impact", href: "/impact" },
+	{ label: "News", href: "/news" },
 	{ label: "Contact", href: "/contact" },
 ];
 
@@ -30,6 +31,16 @@ export default function Header() {
 
 	const isActive = (href: string) => pathname === href;
 	const isPrograms = pathname?.startsWith("/programs");
+
+	// Close menus on escape
+	const menuRef = useRef<HTMLDivElement>(null);
+	useEffect(() => {
+		function onKey(e: KeyboardEvent) {
+			if (e.key === "Escape") setOpenMenu(null);
+		}
+		document.addEventListener("keydown", onKey);
+		return () => document.removeEventListener("keydown", onKey);
+	}, []);
 
 	return (
 		<header className="site-header">
@@ -42,11 +53,12 @@ export default function Header() {
 						<nav className="hidden md:flex items-center gap-1">
 							{nav.map((item) =>
 								item.children ? (
-									<div key={item.label} className="relative">
+									<div key={item.label} className="relative" ref={menuRef}>
 										<button
 											className={`site-nav-link${isPrograms ? " text-[color:var(--brand)]" : ""}`}
 											aria-haspopup="menu"
 											aria-expanded={openMenu === item.label}
+											aria-controls={`menu-${item.label}`}
 											onClick={() => setOpenMenu(openMenu === item.label ? null : item.label)}
 											onBlur={() => setOpenMenu(null)}
 										>
@@ -56,7 +68,8 @@ export default function Header() {
 										{openMenu === item.label && (
 											<div
 												role="menu"
-												className="absolute left-0 mt-2 w-72 rounded-lg border border-black/5 dark:border-white/10 bg-background shadow-lg p-2"
+												id={`menu-${item.label}`}
+												className="absolute left-0 mt-2 w-72 rounded-lg border border-[color:var(--blue-200)] bg-background shadow-lg p-2"
 											>
 												{item.children.map((c) => (
 													<Link
@@ -100,13 +113,14 @@ export default function Header() {
 							aria-expanded={mobileOpen}
 							className="site-nav-link"
 							onClick={() => setMobileOpen((v) => !v)}
+							aria-controls="mobile-nav"
 						>
 							Menu
 						</button>
 					</div>
 				</div>
 				{mobileOpen && (
-					<div className="md:hidden pb-4">
+					<div id="mobile-nav" className="md:hidden pb-4" role="dialog" aria-modal="true">
 						<nav className="grid gap-1">
 							{nav.map((item) =>
 								item.children ? (
