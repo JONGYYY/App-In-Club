@@ -16,14 +16,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --surface: #0f1115;
-    --muted: #9ca3af;
-    --muted-foreground: #a3a3a3;
-    --brand: #5aa2ff;
-    --brand-600: #75b3ff;
-    --brand-700: #9cc9ff;
+    /* Force the same blue/light palette in dark-mode environments */
+    --background: #ffffff;
+    --foreground: #0b3d7a;
+    --surface: #eff6ff;
+    --muted: #2457a6;
+    --muted-foreground: #3b82f6;
+    --brand: #0e6cff;
+    --brand-600: #0956c6;
+    --brand-700: #0748a5;
   }
 }
 
