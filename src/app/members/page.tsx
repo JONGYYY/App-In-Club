@@ -4,33 +4,25 @@ export const metadata = {
 
 export default function MembersPage() {
 	return (
-		<div className="section">
-			<div className="container">
-				<h1 className="text-3xl font-bold tracking-tight">Members</h1>
-				<p className="mt-4 text-muted max-w-2xl">
-					Access workshops, mentorship, community projects, and opportunities to grow skills and leadership.
-				</p>
-				<div className="mt-8 grid gap-4 sm:grid-cols-3">
-					<div className="card shadow-elevation1 hover-raise">
-						<div className="card-body">
-							<div className="font-semibold">Workshops</div>
-							<div className="text-sm text-muted mt-1">Hands‑on sessions to build apps and learn by doing.</div>
-						</div>
-					</div>
-					<div className="card shadow-elevation1 hover-raise">
-						<div className="card-body">
-							<div className="font-semibold">Mentorship</div>
-							<div className="text-sm text-muted mt-1">One‑on‑one support and guidance from experienced peers.</div>
-						</div>
-					</div>
-					<div className="card shadow-elevation1 hover-raise">
-						<div className="card-body">
-							<div className="font-semibold">Competitions</div>
-							<div className="text-sm text-muted mt-1">Prepare for local and global challenges with your team.</div>
-						</div>
+		<div className="font-[family-name:var(--font-geist-sans)]">
+			<section className="section-wide relative overflow-hidden">
+				<div className="absolute inset-0 animated-gradient" aria-hidden />
+				<div className="container relative">
+					<h1 className="text-4xl sm:text-5xl font-bold tracking-tight gradient-text">Members</h1>
+					<p className="mt-4 text-lg text-muted max-w-3xl">
+						Access workshops, mentorship, competitions, and a supportive community to grow your skills and impact.
+					</p>
+				</div>
+			</section>
+			<section className="section">
+				<div className="container">
+					<div className="grid gap-4 sm:grid-cols-3">
+						<div className="card shadow-elevation1 hover-raise"><div className="card-body"><h3 className="font-semibold">Workshops</h3><p className="text-sm text-muted mt-2">Regular sessions to build app skills and collaborate.</p></div></div>
+						<div className="card shadow-elevation1 hover-raise"><div className="card-body"><h3 className="font-semibold">Mentorship</h3><p className="text-sm text-muted mt-2">Guidance from experienced members and leaders.</p></div></div>
+						<div className="card shadow-elevation1 hover-raise"><div className="card-body"><h3 className="font-semibold">Community Projects</h3><p className="text-sm text-muted mt-2">Build real apps that serve community needs.</p></div></div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</div>
 	);
 }

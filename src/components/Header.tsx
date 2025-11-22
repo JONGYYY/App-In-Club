@@ -21,6 +21,7 @@ const nav = [
 	{ label: "Team", href: "/team" },
 	{ label: "Impact", href: "/impact" },
 	{ label: "News", href: "/news" },
+	{ label: "Chapters", href: "/chapter" },
 	{ label: "Contact", href: "/contact" },
 ];
 

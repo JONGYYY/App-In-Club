@@ -1,39 +1,34 @@
-import Container from "@/components/Container";
-import { Hero } from "@/components/Hero";
-import { EDUCATIONAL_COURSES } from "@/data/programs";
-
 export const metadata = {
 	title: "Educational Programs",
-	description: "MIT App Inventor courses, workshops, tutoring/mentoring for all levels.",
 };
 
 export default function EducationalProgramsPage() {
 	return (
-		<>
-			<Hero
-				title={<>Educational Programs</>}
-				subtitle={<>Learn to build apps with MIT App Inventor. Courses, workshops, and mentorship for every level.</>}
-				eyebrow={<>Programs</>}
-			/>
-			<section className="section">
-				<Container>
-					<h2 className="text-xl font-semibold">Highlighted Courses</h2>
-					<ul className="mt-4 grid gap-3">
-						{EDUCATIONAL_COURSES.map((c, i) => (
-							<li key={i} className="card shadow-elevation1 hover-raise">
-								<div className="card-body">
-									<div className="font-medium">{c.title}</div>
-									{c.dates && <div className="text-sm text-muted mt-1">{c.dates}</div>}
-								</div>
-							</li>
-						))}
-					</ul>
-					<p className="mt-6 text-sm text-muted">
-						We organize discussions and provide one‑on‑one tutoring/mentoring to support student growth.
+		<div className="font-[family-name:var(--font-geist-sans)]">
+			<section className="section-wide relative overflow-hidden">
+				<div className="absolute inset-0 animated-gradient" aria-hidden />
+				<div className="container relative">
+					<h1 className="text-4xl sm:text-5xl font-bold tracking-tight gradient-text">Educational Programs</h1>
+					<p className="mt-4 text-lg text-muted max-w-3xl">
+						MIT App Inventor courses, workshops, discussions, and one‑on‑one tutoring/mentoring for all levels.
+						In today’s tech and AI‑powered world, app creation helps students express ideas and become agents of change.
 					</p>
-				</Container>
+				</div>
 			</section>
-		</>
+
+			<section className="section">
+				<div className="container">
+					<h2 className="text-xl font-semibold">Recent & past courses</h2>
+					<ul className="mt-4 grid gap-3 sm:grid-cols-2">
+						<li className="card"><div className="card-body text-sm">07/14–28/2024 — APP‑INNOVATOR Summer Camp</div></li>
+						<li className="card"><div className="card-body text-sm">04/14–28/2024 — Crash Course led by Girl Officer Team (Spring 2024)</div></li>
+						<li className="card"><div className="card-body text-sm">11/25–12/16/2023 — MIT App Inventor Crash Course 3 (Fall 2023)</div></li>
+						<li className="card"><div className="card-body text-sm">03/25–04/15/2023 — MIT App Inventor Crash Course 2</div></li>
+						<li className="card"><div className="card-body text-sm">11/25–27/2022 — Crash Course (Fall 2022)</div></li>
+					</ul>
+				</div>
+			</section>
+		</div>
 	);
 }
 

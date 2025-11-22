@@ -1,37 +1,34 @@
-import Container from "@/components/Container";
-import { Hero } from "@/components/Hero";
-import { LECTURES } from "@/data/programs";
-
 export const metadata = {
 	title: "Lectures & Conferences",
-	description:
-		"We invite renowned scholars, industry leaders, competition champions, and top university students to share experiences.",
 };
 
 export default function LecturesAndConferencesPage() {
 	return (
-		<>
-			<Hero
-				title={<>Lectures & Conferences</>}
-				subtitle={<>Hear from scholars, industry leaders, world champions, and top university students.</>}
-				eyebrow={<>Programs</>}
-			/>
-			<section className="section">
-				<Container>
-					<h2 className="text-xl font-semibold">Highlights</h2>
-					<ul className="mt-4 grid gap-3">
-						{LECTURES.map((c, i) => (
-							<li key={i} className="card shadow-elevation1 hover-raise">
-								<div className="card-body">
-									<div className="font-medium">{c.title}</div>
-									{c.dates && <div className="text-sm text-muted mt-1">{c.dates}</div>}
-								</div>
-							</li>
-						))}
-					</ul>
-				</Container>
+		<div className="font-[family-name:var(--font-geist-sans)]">
+			<section className="section-wide relative overflow-hidden">
+				<div className="absolute inset-0 animated-gradient" aria-hidden />
+				<div className="container relative">
+					<h1 className="text-4xl sm:text-5xl font-bold tracking-tight gradient-text">Lectures & Conferences</h1>
+					<p className="mt-4 text-lg text-muted max-w-3xl">
+						We invite renowned scholars, industry leaders, competition champions, and top university students to share experience and inspiration with our members.
+					</p>
+				</div>
 			</section>
-		</>
+			<section className="section">
+				<div className="container">
+					<h2 className="text-xl font-semibold">Recent talks</h2>
+					<ul className="mt-4 grid gap-3">
+						<li className="card"><div className="card-body text-sm">07/24–26/2024 — MIT AI&EDU Summit</div></li>
+						<li className="card"><div className="card-body text-sm">05/29–31/2024 — K12 AI INITIATIVE @ GenAI Summit SF</div></li>
+						<li className="card"><div className="card-body text-sm">09/16/2023 — Verbal Alchemy: Mastering the Art of Debate</div></li>
+						<li className="card"><div className="card-body text-sm">06/13/2023 — Unlock the Secrets to App Success</div></li>
+						<li className="card"><div className="card-body text-sm">06/10/2023 — App‑In Twilight Tech Talks</div></li>
+						<li className="card"><div className="card-body text-sm">02/20/2023 — App‑In USACO Summit</div></li>
+						<li className="card"><div className="card-body text-sm">02/11/2023 — App‑In Club + MetroHacks Tech Webinar</div></li>
+					</ul>
+				</div>
+			</section>
+		</div>
 	);
 }
 
