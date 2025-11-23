@@ -199,3 +199,39 @@ body {
   transform: translateY(-2px);
   box-shadow: var(--shadow-2);
 }
+
+/* Image placeholder */
+.img-placeholder {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px dashed color-mix(in srgb, var(--brand) 35%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--blue-100) 75%, white), var(--blue-50));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.img-placeholder-label {
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--foreground) 55%, transparent);
+}
+
+/* Simple marquee */
+@keyframes marqueeSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee {
+  display: flex;
+  gap: 2rem;
+  width: 200%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track {
+    overflow: hidden;
+  }
+  .marquee {
+    animation: marqueeSlide 20s linear infinite;
+  }
+}

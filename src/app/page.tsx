@@ -6,6 +6,7 @@ import { Stat } from "@/components/Stat";
 import Container from "@/components/Container";
 import { Testimonial } from "@/components/Testimonial";
 import Link from "next/link";
+import { Placeholder } from "@/components/Placeholder";
 
 export default function Home() {
   return (
@@ -27,18 +28,21 @@ export default function Home() {
 					<div className="grid gap-4 sm:grid-cols-3">
 						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
 							<div className="card-body">
+								<Placeholder label="Hero / Course visual" className="mb-3" aspect="4 / 3" />
 								<h3 className="font-semibold">Hands‑on Learning</h3>
 								<p className="text-sm text-muted mt-2">MIT App Inventor courses, workshops, and tutoring for all levels.</p>
 							</div>
 						</div>
 						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "220ms" }}>
 							<div className="card-body">
+								<Placeholder label="Competition visual" className="mb-3" aspect="4 / 3" />
 								<h3 className="font-semibold">Competitions & Events</h3>
 								<p className="text-sm text-muted mt-2">Prepare for regional, national, and international challenges.</p>
 							</div>
 						</div>
 						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "320ms" }}>
 							<div className="card-body">
+								<Placeholder label="Community visual" className="mb-3" aspect="4 / 3" />
 								<h3 className="font-semibold">Mentors & Community</h3>
 								<p className="text-sm text-muted mt-2">Connect with mentors, peers, and industry speakers.</p>
 							</div>
@@ -47,19 +51,45 @@ export default function Home() {
 				</Container>
 			</section>
 
+			{/* Partner/press marquee (placeholder logos) */}
+			<section className="section-tight section-muted">
+				<Container>
+					<div className="marquee-track">
+						<div className="marquee">
+							<Placeholder label="Partner Logo" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="Press" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="Sponsor" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="University" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="Community" className="h-10 w-40" aspect="4 / 1" />
+							{/* duplicate to loop seamlessly */}
+							<Placeholder label="Partner Logo" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="Press" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="Sponsor" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="University" className="h-10 w-40" aspect="4 / 1" />
+							<Placeholder label="Community" className="h-10 w-40" aspect="4 / 1" />
+						</div>
+					</div>
+				</Container>
+			</section>
+
 			{/* Featured event */}
 			<section className="section section-muted">
 				<Container>
-					<EventCard
-						title="2025 AI Summit For Young Scholars"
-						date="June 7–8, 2025"
-						location="Day 1: Cupertino City Hall • Day 2: MakerNexus, Sunnyvale"
-						description="Two days of engaging workshops and a mentor‑guided hackathon for students of all ages.
-							Workshops include MIT App Inventor (App‑In Club), Accelerating Python with NVIDIA, BioEthicAI,
-							and 3D Printing DIY UV Charm."
-						primaryHref="#"
-						secondaryHref="#"
-					/>
+					<div className="grid gap-6 lg:grid-cols-2 items-start">
+						<Placeholder label="Featured event photo" className="w-full hover-raise reveal-up" style={{ animationDelay: "100ms" }} />
+						<div className="reveal-up" style={{ animationDelay: "200ms" }}>
+							<EventCard
+								title="2025 AI Summit For Young Scholars"
+								date="June 7–8, 2025"
+								location="Day 1: Cupertino City Hall • Day 2: MakerNexus, Sunnyvale"
+								description="Two days of engaging workshops and a mentor‑guided hackathon for students of all ages.
+									Workshops include MIT App Inventor (App‑In Club), Accelerating Python with NVIDIA, BioEthicAI,
+									and 3D Printing DIY UV Charm."
+								primaryHref="#"
+								secondaryHref="#"
+							/>
+						</div>
+					</div>
 				</Container>
 			</section>
 
@@ -76,6 +106,7 @@ export default function Home() {
 							title="Educational Programs"
 							description="MIT App Inventor courses, workshops, and tutoring."
 							href="/programs/educational-programs"
+							imageLabel="Course image"
 						/>
 						</div>
 						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
@@ -83,6 +114,7 @@ export default function Home() {
 							title="Competitions & Events"
 							description="Participate in regional, national, and international competitions."
 							href="/programs/competitions-and-events"
+							imageLabel="Competition poster"
 						/>
 						</div>
 						<div className="reveal-up" style={{ animationDelay: "320ms" }}>
@@ -90,6 +122,7 @@ export default function Home() {
 							title="Lectures & Conferences"
 							description="Talks from scholars, industry leaders, and top students."
 							href="/programs/lectures-and-conferences"
+							imageLabel="Lecture banner"
 						/>
 						</div>
 					</div>
@@ -138,9 +171,24 @@ export default function Home() {
 						<Link href="/news" className="site-nav-link">All news</Link>
 					</header>
 					<ul className="grid gap-4 sm:grid-cols-3">
-						<li className="card"><div className="card-body text-sm">MIT AI & EDU Summit — “Hack the Climate” winners.</div></li>
-						<li className="card"><div className="card-body text-sm">Congressional App Challenge recognitions.</div></li>
-						<li className="card"><div className="card-body text-sm">Global AI Hackathon youth award and honorable mention.</div></li>
+						<li className="card">
+							<div className="card-body text-sm">
+								<Placeholder label="Thumbnail" className="mb-2" aspect="16 / 9" />
+								MIT AI & EDU Summit — “Hack the Climate” winners.
+							</div>
+						</li>
+						<li className="card">
+							<div className="card-body text-sm">
+								<Placeholder label="Thumbnail" className="mb-2" aspect="16 / 9" />
+								Congressional App Challenge recognitions.
+							</div>
+						</li>
+						<li className="card">
+							<div className="card-body text-sm">
+								<Placeholder label="Thumbnail" className="mb-2" aspect="16 / 9" />
+								Global AI Hackathon youth award and honorable mention.
+							</div>
+						</li>
 					</ul>
 				</Container>
 			</section>
