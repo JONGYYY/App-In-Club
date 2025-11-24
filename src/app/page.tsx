@@ -7,6 +7,7 @@ import Container from "@/components/Container";
 import { Testimonial } from "@/components/Testimonial";
 import Link from "next/link";
 import { Placeholder } from "@/components/Placeholder";
+import { SocialBar } from "@/components/SocialBar";
 
 export default function Home() {
   return (
@@ -16,11 +17,20 @@ export default function Home() {
 				subtitle={<>We promote impact‑driven learning: sparking imagination and creating apps to improve the world.</>}
 				actions={
 					<>
+						<LinkButton href="/contact" variant="primary">Join Now</LinkButton>
 						<LinkButton href="/programs/educational-programs" variant="primary">Explore Programs</LinkButton>
 						<LinkButton href="/contact" variant="secondary">Contact Us</LinkButton>
 					</>
 				}
 			/>
+			{/* Social bar near the top */}
+			<section className="section-tight">
+				<Container>
+					<div className="flex items-center justify-center">
+						<SocialBar />
+					</div>
+				</Container>
+			</section>
 
 			{/* Value props */}
 			<section className="section">

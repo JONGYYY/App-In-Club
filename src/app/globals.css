@@ -200,6 +200,18 @@ body {
   box-shadow: var(--shadow-2);
 }
 
+/* Icon button base */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease, filter .2s ease;
+}
+.icon-btn:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.1);
+}
+
 /* Image placeholder */
 .img-placeholder {
   position: relative;
