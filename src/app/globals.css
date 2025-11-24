@@ -212,6 +212,14 @@ body {
   filter: saturate(1.1);
 }
 
+/* Floating social bar */
+.floating-social {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 50;
+}
+
 /* Image placeholder */
 .img-placeholder {
   position: relative;
