@@ -1,3 +1,7 @@
+import { Placeholder } from "@/components/Placeholder";
+import { LinkButton } from "@/components/Button";
+import Link from "next/link";
+
 export const metadata = {
 	title: "Competitions & Events",
 };
@@ -35,9 +39,7 @@ export default function CompetitionsAndEventsPage() {
 							<p className="mt-2 text-muted">APP‑IN Club teams received top awards at the MIT AI&EDU Summit event.</p>
 						</div>
 						{/* simple placeholder box to drop imagery later */}
-						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
-							<div className="card-body text-sm">Image placeholder</div>
-						</div>
+						<Placeholder label="MIT AI&EDU Summit photos" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
 					</div>
 				</div>
 			</section>
@@ -45,12 +47,16 @@ export default function CompetitionsAndEventsPage() {
 			<section className="section">
 				<div className="container">
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
-							<div className="card-body text-sm">Global AI / WAICY image placeholder</div>
-						</div>
+						<Placeholder label="Global AI & WAICY" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
 						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
 							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Global AI Hackathon & WAICY</h2>
 							<p className="mt-2 text-muted">Youth team award, honorable mentions, and multi‑category awards at WAICY.</p>
+							<ul className="mt-3 list-disc pl-5 text-sm text-muted space-y-1">
+								<li>Youth Team Winner: “SignLingo” — Amy Wang, Adrian Zhang, Justin Wang, Jonathan Shan</li>
+								<li>Honorable Mentions: “Smart Vision” — Aiden Chen</li>
+								<li>High School Showcase Track, Global Gold: “Scribe AI” — Tianyi Huang, Richard Xiong</li>
+								<li>High School AI LLM Track, Global Silver: “AIRanger” — Yuekai (Kevin) Wang, Sarina Feng, Wenqian (Nancy) Chen, Joshua Edwards</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -65,9 +71,86 @@ export default function CompetitionsAndEventsPage() {
 							<h3 className="mt-6 font-semibold">MIT App Inventor Summer Appathon</h3>
 							<p className="text-sm text-muted mt-1">Global community event — many APP‑IN members participate annually.</p>
 						</div>
-						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
-							<div className="card-body text-sm">App Challenge / Appathon placeholder</div>
+						<Placeholder label="App Challenge / Appathon" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+					</div>
+				</div>
+			</section>
+
+			{/* Honor Wall */}
+			<section className="section">
+				<div className="container">
+					<header className="mb-6 sm:mb-8 text-center">
+						<h2 className="text-3xl font-extrabold tracking-tight">Honor Wall</h2>
+						<p className="mt-2 text-muted">We celebrate outstanding winners and teams that inspire our community.</p>
+					</header>
+					<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="First Place photo" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">MIT AI & EDU Summit 2024 — Hack the Climate</h3>
+								<p className="text-sm text-muted mt-1">FIRST PLACE: “Compost Connects” — Aidon Chen, Justin Tang, Ray Li</p>
+							</div>
 						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="Poster Selected" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">MIT AI & EDU Summit 2024</h3>
+								<p className="text-sm text-muted mt-1">POSTER SELECTED — SECOND PLACE: “SignLingo” — Amy Wang, Justin Wang, Jonathan Shan</p>
+							</div>
+						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="Paper Selected" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">MIT AI & EDU Summit 2024</h3>
+								<p className="text-sm text-muted mt-1">PAPER SELECTED: “Extracurricular Success of Early AI Education” — Tianyi Huang</p>
+							</div>
+						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="Global AI Hackathon" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">MIT Global AI Hackathon 2024</h3>
+								<p className="text-sm text-muted mt-1">Youth Team Winner: “SignLingo” — Amy Wang, Adrian Zhang, Justin Wang, Jonathan Shan</p>
+							</div>
+						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="San Ramon Hackathon" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">San Ramon Hackathon — AI in Action</h3>
+								<p className="text-sm text-muted mt-1">Community‑driven innovation with AI projects from students.</p>
+							</div>
+						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="Cerebria" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">First Prize Winner — Cerebria</h3>
+								<p className="text-sm text-muted mt-1">By Aiden Cheng, Kevin Xia</p>
+							</div>
+						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="Wildfire Drone" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">Second Prize — ML Drone for Early Wildfire Detection</h3>
+								<p className="text-sm text-muted mt-1">By Lucas Su, Dale Liu, Pranav Saharan</p>
+							</div>
+						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="Youth Individual" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">Youth Individual</h3>
+								<p className="text-sm text-muted mt-1">First: Ecoplate — Michelle (Siyuan) Yang</p>
+								<p className="text-sm text-muted">Second: Council Calendar — Evan Yang</p>
+							</div>
+						</div>
+						<div className="card hover-raise">
+							<div className="card-body">
+								<Placeholder label="Youth Team" className="mb-3" aspect="16 / 9" />
+								<h3 className="font-semibold">Youth Team</h3>
+								<p className="text-sm text-muted mt-1">Second: Productiviteams — Jaida Gao, Jason Huang, Etai Miller, Caleb Su, Kevin Lu</p>
+							</div>
+						</div>
+					</div>
+					<div className="mt-8 text-center">
+						<Link href="/news" className="site-nav-link">See more achievements in News</Link>
 					</div>
 				</div>
 			</section>
