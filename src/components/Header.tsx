@@ -40,7 +40,16 @@ export default function Header() {
 			if (e.key === "Escape") setOpenMenu(null);
 		}
 		document.addEventListener("keydown", onKey);
-		return () => document.removeEventListener("keydown", onKey);
+		function onDocMouseDown(e: MouseEvent) {
+			if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+				setOpenMenu(null);
+			}
+		}
+		document.addEventListener("mousedown", onDocMouseDown);
+		return () => {
+			document.removeEventListener("keydown", onKey);
+			document.removeEventListener("mousedown", onDocMouseDown);
+		};
 	}, []);
 
 	return (
@@ -54,7 +63,7 @@ export default function Header() {
 						<nav className="hidden md:flex items-center gap-1">
 							{nav.map((item) =>
 								item.children ? (
-									<div key={item.label} className="relative" ref={menuRef} onMouseLeave={() => setOpenMenu(null)}>
+									<div key={item.label} className="relative" ref={menuRef}>
 										<button
 											className={`site-nav-link${isPrograms ? " text-[color:var(--brand)]" : ""}`}
 											aria-haspopup="menu"
@@ -69,7 +78,7 @@ export default function Header() {
 											<div
 												role="menu"
 												id={`menu-${item.label}`}
-												className="absolute left-0 mt-2 w-72 rounded-lg border border-[color:var(--blue-200)] bg-background shadow-lg p-2"
+												className="absolute left-0 mt-1 w-72 rounded-lg border border-[color:var(--blue-200)] bg-background shadow-lg p-2"
 											>
 												<Link
 													href="/programs"
