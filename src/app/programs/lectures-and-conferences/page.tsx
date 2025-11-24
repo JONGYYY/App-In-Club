@@ -28,6 +28,32 @@ export default function LecturesAndConferencesPage() {
 					</ul>
 				</div>
 			</section>
+			<section className="section section-muted">
+				<div className="container">
+					<div className="grid gap-6 lg:grid-cols-2 items-start">
+						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
+							<div className="card-body text-sm">Summit image placeholder</div>
+						</div>
+						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
+							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">MIT AI&EDU Summit</h2>
+							<p className="mt-2 text-muted">Highlights and talks — many APP‑IN members participate and present.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className="section">
+				<div className="container">
+					<div className="grid gap-6 lg:grid-cols-2 items-start">
+						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
+							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">K12 AI Initiative @ GenAI Summit SF</h2>
+							<p className="mt-2 text-muted">Talks on K‑12 AI education, community workshops, and panels.</p>
+						</div>
+						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
+							<div className="card-body text-sm">GenAI summit visual placeholder</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }

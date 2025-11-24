@@ -26,6 +26,51 @@ export default function CompetitionsAndEventsPage() {
 					</ul>
 				</div>
 			</section>
+
+			<section className="section section-muted">
+				<div className="container">
+					<div className="grid gap-6 lg:grid-cols-2 items-start">
+						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
+							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">MIT Hack the Climate</h2>
+							<p className="mt-2 text-muted">APP‑IN Club teams received top awards at the MIT AI&EDU Summit event.</p>
+						</div>
+						{/* simple placeholder box to drop imagery later */}
+						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
+							<div className="card-body text-sm">Image placeholder</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="section">
+				<div className="container">
+					<div className="grid gap-6 lg:grid-cols-2 items-start">
+						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
+							<div className="card-body text-sm">Global AI / WAICY image placeholder</div>
+						</div>
+						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
+							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Global AI Hackathon & WAICY</h2>
+							<p className="mt-2 text-muted">Youth team award, honorable mentions, and multi‑category awards at WAICY.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="section section-muted">
+				<div className="container">
+					<div className="grid gap-6 lg:grid-cols-2 items-start">
+						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
+							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Congressional App Challenge</h2>
+							<p className="mt-2 text-muted">Members invited to Washington DC #HouseOfCode to celebrate winners and finalists.</p>
+							<h3 className="mt-6 font-semibold">MIT App Inventor Summer Appathon</h3>
+							<p className="text-sm text-muted mt-1">Global community event — many APP‑IN members participate annually.</p>
+						</div>
+						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
+							<div className="card-body text-sm">App Challenge / Appathon placeholder</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }
