@@ -10,7 +10,7 @@ function Icon({
 	return (
 		<span
 			aria-hidden
-			className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-[color:var(--brand)] shadow-elevation1"
+			className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--brand)] text-white shadow-elevation2"
 		>
 			{children}
 		</span>
@@ -42,7 +42,9 @@ function IconButton({
 
 export function SocialBar() {
 	return (
-		<div className="inline-flex items-center gap-2 rounded-full bg-white/50 px-3 py-2 shadow-elevation1 backdrop-blur">
+		<div className="inline-flex items-center gap-2 rounded-full px-3 py-2 shadow-elevation2 backdrop-blur"
+			style={{ background: "linear-gradient(135deg, var(--blue-400), var(--brand))", color: "#fff", border: "1px solid color-mix(in srgb, var(--blue-100) 60%, white)" }}
+		>
 			<IconButton href="https://x.com" label="X (formerly Twitter)">
 				<span className="font-bold">X</span>
 			</IconButton>

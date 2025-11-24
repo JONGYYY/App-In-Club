@@ -2,6 +2,8 @@ export const metadata = {
 	title: "About",
 };
 
+import { Placeholder } from "@/components/Placeholder";
+
 export default function AboutPage() {
 	return (
 		<div className="font-[family-name:var(--font-geist-sans)]">
@@ -17,6 +19,18 @@ export default function AboutPage() {
 							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑IN TOGETHER</span>
 							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑FOR GOOD</span>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* Intro media placeholder */}
+			<section className="section">
+				<div className="container">
+					<div className="grid gap-6 lg:grid-cols-2 items-start">
+						<Placeholder label="About video" className="hover-raise reveal-up" style={{ animationDelay: "100ms" } as any} />
+						<p className="text-muted reveal-up" style={{ animationDelay: "200ms" }}>
+							In the club, you can learn how to create your own impactful apps aimed at the real world; share your ideas and technology skills with others; and create apps to solve issues such as healthcare, transportation and disaster relief to improve the world.
+						</p>
 					</div>
 				</div>
 			</section>
@@ -64,12 +78,42 @@ export default function AboutPage() {
 				<div className="container">
 					<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">What we create</h2>
 					<ul className="mt-4 grid gap-4 sm:grid-cols-2">
-						<li className="card shadow-elevation1"><div className="card-body text-sm">Snap Cook — turn food photos into recipes to reduce waste.</div></li>
-						<li className="card shadow-elevation1"><div className="card-body text-sm">Productiviteams — MIT Summer Appathon submission.</div></li>
-						<li className="card shadow-elevation1"><div className="card-body text-sm">EdBox — sharing and reusing educational resources.</div></li>
-						<li className="card shadow-elevation1"><div className="card-body text-sm">Animal Services — help for lost or injured animals.</div></li>
-						<li className="card shadow-elevation1"><div className="card-body text-sm">iHELP — safe cities: alerts to nearby helpers when needed.</div></li>
-						<li className="card shadow-elevation1"><div className="card-body text-sm">Garbage Sort — high‑efficiency waste sorting and processing.</div></li>
+						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
+							<div className="card-body text-sm">
+								<Placeholder label="Snap Cook image" className="mb-3" aspect="16 / 9" />
+								Snap Cook — turn food photos into recipes to reduce waste.
+							</div>
+						</li>
+						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "160ms" }}>
+							<div className="card-body text-sm">
+								<Placeholder label="Productiviteams image" className="mb-3" aspect="16 / 9" />
+								Productiviteams — MIT Summer Appathon submission.
+							</div>
+						</li>
+						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "200ms" }}>
+							<div className="card-body text-sm">
+								<Placeholder label="EdBox image" className="mb-3" aspect="16 / 9" />
+								EdBox — sharing and reusing educational resources.
+							</div>
+						</li>
+						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "240ms" }}>
+							<div className="card-body text-sm">
+								<Placeholder label="Animal Services image" className="mb-3" aspect="16 / 9" />
+								Animal Services — help for lost or injured animals.
+							</div>
+						</li>
+						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "280ms" }}>
+							<div className="card-body text-sm">
+								<Placeholder label="iHELP image" className="mb-3" aspect="16 / 9" />
+								iHELP — safe cities: alerts to nearby helpers when needed.
+							</div>
+						</li>
+						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "320ms" }}>
+							<div className="card-body text-sm">
+								<Placeholder label="Garbage Sort image" className="mb-3" aspect="16 / 9" />
+								Garbage Sort — high‑efficiency waste sorting and processing.
+							</div>
+						</li>
 					</ul>
 				</div>
 			</section>

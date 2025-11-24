@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SocialBar } from "@/components/SocialBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -49,6 +50,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 				<a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 site-cta">Skip to content</a>
+				<div className="floating-social">
+					<SocialBar />
+				</div>
 				<Header />
 				<main id="content">{children}</main>
 				<Footer />

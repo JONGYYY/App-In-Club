@@ -12,9 +12,6 @@ import { SocialBar } from "@/components/SocialBar";
 export default function Home() {
   return (
 		<div className="font-[family-name:var(--font-geist-sans)]">
-			<div className="floating-social">
-				<SocialBar />
-			</div>
 			<Hero
 				title={<>APP‑IN Club — A Global Student‑Run Organization</>}
 				subtitle={<>We promote impact‑driven learning: sparking imagination and creating apps to improve the world.</>}
