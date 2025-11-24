@@ -54,14 +54,13 @@ export default function Header() {
 						<nav className="hidden md:flex items-center gap-1">
 							{nav.map((item) =>
 								item.children ? (
-									<div key={item.label} className="relative" ref={menuRef}>
+									<div key={item.label} className="relative" ref={menuRef} onMouseLeave={() => setOpenMenu(null)}>
 										<button
 											className={`site-nav-link${isPrograms ? " text-[color:var(--brand)]" : ""}`}
 											aria-haspopup="menu"
 											aria-expanded={openMenu === item.label}
 											aria-controls={`menu-${item.label}`}
 											onClick={() => setOpenMenu(openMenu === item.label ? null : item.label)}
-											onBlur={() => setOpenMenu(null)}
 										>
 											{item.label}
 											<ChevronDownIcon className="size-4 opacity-70" />
@@ -72,12 +71,21 @@ export default function Header() {
 												id={`menu-${item.label}`}
 												className="absolute left-0 mt-2 w-72 rounded-lg border border-[color:var(--blue-200)] bg-background shadow-lg p-2"
 											>
+												<Link
+													href="/programs"
+													className="block px-3 py-2 rounded-md text-sm hover:bg-black/[.04] dark:hover:bg-white/[.06] font-semibold"
+													role="menuitem"
+													onClick={() => setOpenMenu(null)}
+												>
+													View all Programs
+												</Link>
 												{item.children.map((c) => (
 													<Link
 														key={c.href}
 														href={c.href}
 														className="block px-3 py-2 rounded-md text-sm hover:bg-black/[.04] dark:hover:bg-white/[.06]"
 														role="menuitem"
+														onClick={() => setOpenMenu(null)}
 													>
 														{c.label}
 													</Link>
