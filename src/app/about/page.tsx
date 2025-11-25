@@ -3,6 +3,7 @@ export const metadata = {
 };
 
 import { Placeholder } from "@/components/Placeholder";
+import type { CSSProperties } from "react";
 
 export default function AboutPage() {
 	return (
@@ -15,7 +16,7 @@ export default function AboutPage() {
 						<p className="mt-4 text-lg text-muted reveal-up" style={{ animationDelay: "150ms" }}>
 							App‑In Club is inspired by youth app inventors and coders. We spark imagination and unlock creativity through inquiry‑based, impact‑driven learning — helping students build apps that make a real difference.
 						</p>
-						<div className="mt-6 flex gap-2 reveal-up" style={{ animationDelay: "250ms" } as React.CSSProperties}>
+						<div className="mt-6 flex gap-2 reveal-up" style={{ animationDelay: "250ms" } as CSSProperties}>
 							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑IN TOGETHER</span>
 							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑FOR GOOD</span>
 						</div>
@@ -27,7 +28,7 @@ export default function AboutPage() {
 			<section className="section">
 				<div className="container">
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<Placeholder label="About video" className="hover-raise reveal-up" style={{ animationDelay: "100ms" } as any} />
+						<Placeholder label="About video" className="hover-raise reveal-up" style={{ animationDelay: "100ms" } as CSSProperties} />
 						<p className="text-muted reveal-up" style={{ animationDelay: "200ms" }}>
 							In the club, you can learn how to create your own impactful apps aimed at the real world; share your ideas and technology skills with others; and create apps to solve issues such as healthcare, transportation and disaster relief to improve the world.
 						</p>
