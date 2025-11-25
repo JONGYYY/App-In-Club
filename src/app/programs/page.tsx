@@ -3,6 +3,7 @@ import { ProgramCard } from "@/components/ProgramCard";
 import { Placeholder } from "@/components/Placeholder";
 import Link from "next/link";
 import { LinkButton } from "@/components/Button";
+import type { CSSProperties } from "react";
 
 export const metadata = {
 	title: "Programs",
@@ -53,7 +54,7 @@ export default function ProgramsIndexPage() {
 			<section className="section section-muted">
 				<Container>
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<Placeholder label="Educational Programs visual" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="Educational Programs visual" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
 							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Educational Programs</h2>
 							<p className="mt-2 text-muted">
@@ -69,7 +70,7 @@ export default function ProgramsIndexPage() {
 							</ul>
 							<div className="mt-5 flex gap-3">
 								<LinkButton href="/programs/educational-programs" variant="primary">More Courses</LinkButton>
-								<Link href="/programs/educational-programs" className="site-nav-link">Let's learn</Link>
+								<Link href="/programs/educational-programs" className="site-nav-link">Let&rsquo;s learn</Link>
 							</div>
 						</div>
 					</div>
@@ -94,10 +95,10 @@ export default function ProgramsIndexPage() {
 							</ul>
 							<div className="mt-5 flex gap-3">
 								<LinkButton href="/programs/competitions-and-events" variant="primary">More Competitions</LinkButton>
-								<Link href="/programs/competitions-and-events" className="site-nav-link">Let's create</Link>
+								<Link href="/programs/competitions-and-events" className="site-nav-link">Let&rsquo;s create</Link>
 							</div>
 						</div>
-						<Placeholder label="Competitions montage" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="Competitions montage" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 					</div>
 				</Container>
 			</section>
@@ -106,7 +107,7 @@ export default function ProgramsIndexPage() {
 			<section className="section section-muted">
 				<Container>
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<Placeholder label="Lectures & Conferences visual" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="Lectures & Conferences visual" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
 							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Lectures & Conferences</h2>
 							<p className="mt-2 text-muted">
@@ -122,7 +123,7 @@ export default function ProgramsIndexPage() {
 							</ul>
 							<div className="mt-5 flex gap-3">
 								<LinkButton href="/programs/lectures-and-conferences" variant="primary">More Lectures</LinkButton>
-								<Link href="/programs/lectures-and-conferences" className="site-nav-link">Let's share</Link>
+								<Link href="/programs/lectures-and-conferences" className="site-nav-link">Let&rsquo;s share</Link>
 							</div>
 						</div>
 					</div>

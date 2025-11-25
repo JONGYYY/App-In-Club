@@ -15,7 +15,7 @@ export default function AboutPage() {
 						<p className="mt-4 text-lg text-muted reveal-up" style={{ animationDelay: "150ms" }}>
 							App‑In Club is inspired by youth app inventors and coders. We spark imagination and unlock creativity through inquiry‑based, impact‑driven learning — helping students build apps that make a real difference.
 						</p>
-						<div className="mt-6 flex gap-2 reveal-up" style={{ animationDelay: "250ms" }}>
+						<div className="mt-6 flex gap-2 reveal-up" style={{ animationDelay: "250ms" } as React.CSSProperties}>
 							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑IN TOGETHER</span>
 							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑FOR GOOD</span>
 						</div>

@@ -1,6 +1,7 @@
 import { Placeholder } from "@/components/Placeholder";
 import { LinkButton } from "@/components/Button";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 export const metadata = {
 	title: "Educational Programs",
@@ -25,7 +26,7 @@ export default function EducationalProgramsPage() {
 			<section className="section">
 				<div className="container">
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<Placeholder label="2025 Applied AI Crash Course" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="2025 Applied AI Crash Course" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
 							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">2025 Applied AI Crash Course</h2>
 							<p className="mt-2 text-muted">
@@ -60,7 +61,7 @@ export default function EducationalProgramsPage() {
 							</ul>
 							<div className="mt-5"><LinkButton href="/contact" variant="secondary">Join us now</LinkButton></div>
 						</div>
-						<Placeholder label="Thanksgiving Crash Course visuals" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="Thanksgiving Crash Course visuals" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 					</div>
 				</div>
 			</section>
@@ -69,7 +70,7 @@ export default function EducationalProgramsPage() {
 			<section className="section">
 				<div className="container">
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<Placeholder label="UI Design Workshop" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="UI Design Workshop" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
 							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">2024 Summer UI Design Workshop</h2>
 							<p className="mt-2 text-muted">Dive into “clean” UI design — learn principles that improve how users perceive and interact with apps.</p>
@@ -85,7 +86,7 @@ export default function EducationalProgramsPage() {
 								<li>Week 3 (7/28): Finalize designs and present comprehensive proposals</li>
 							</ul>
 						</div>
-						<Placeholder label="App‑Innovator Camp" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="App‑Innovator Camp" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 					</div>
 				</div>
 			</section>

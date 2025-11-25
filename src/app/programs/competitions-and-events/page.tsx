@@ -1,6 +1,6 @@
 import { Placeholder } from "@/components/Placeholder";
-import { LinkButton } from "@/components/Button";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 export const metadata = {
 	title: "Competitions & Events",
@@ -39,7 +39,7 @@ export default function CompetitionsAndEventsPage() {
 							<p className="mt-2 text-muted">APP‑IN Club teams received top awards at the MIT AI&EDU Summit event.</p>
 						</div>
 						{/* simple placeholder box to drop imagery later */}
-						<Placeholder label="MIT AI&EDU Summit photos" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="MIT AI&EDU Summit photos" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 					</div>
 				</div>
 			</section>
@@ -47,7 +47,7 @@ export default function CompetitionsAndEventsPage() {
 			<section className="section">
 				<div className="container">
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<Placeholder label="Global AI & WAICY" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="Global AI & WAICY" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
 							<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Global AI Hackathon & WAICY</h2>
 							<p className="mt-2 text-muted">Youth team award, honorable mentions, and multi‑category awards at WAICY.</p>
@@ -71,7 +71,7 @@ export default function CompetitionsAndEventsPage() {
 							<h3 className="mt-6 font-semibold">MIT App Inventor Summer Appathon</h3>
 							<p className="text-sm text-muted mt-1">Global community event — many APP‑IN members participate annually.</p>
 						</div>
-						<Placeholder label="App Challenge / Appathon" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as any} />
+						<Placeholder label="App Challenge / Appathon" className="w-full hover-raise reveal-up" style={{ animationDelay: "120ms" } as CSSProperties} />
 					</div>
 				</div>
 			</section>

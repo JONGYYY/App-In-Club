@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, ElementType } from "react";
 
 type Elevation = 0 | 1 | 2 | 3 | 4;
 
@@ -13,7 +13,7 @@ export function Card({
 	elevation?: Elevation;
 	as?: "div" | "section" | "article" | "li";
 }) {
-	const As = as as any;
+	const As = as as ElementType;
 	const elevationClass =
 		elevation === 0
 			? ""

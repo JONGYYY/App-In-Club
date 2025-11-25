@@ -7,7 +7,6 @@ import Container from "@/components/Container";
 import { Testimonial } from "@/components/Testimonial";
 import Link from "next/link";
 import { Placeholder } from "@/components/Placeholder";
-import { SocialBar } from "@/components/SocialBar";
 
 export default function Home() {
   return (

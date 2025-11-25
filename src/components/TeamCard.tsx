@@ -1,11 +1,9 @@
 export function TeamCard({
 	name,
 	role,
-	imageAlt = "",
 }: {
 	name: string;
 	role: string;
-	imageAlt?: string;
 }) {
 	return (
 		<div className="card shadow-elevation1 text-center">

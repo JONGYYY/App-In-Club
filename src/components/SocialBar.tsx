@@ -1,12 +1,6 @@
 import Link from "next/link";
 
-function Icon({
-	label,
-	children,
-}: {
-	label: string;
-	children: React.ReactNode;
-}) {
+function Icon({ children }: { children: React.ReactNode }) {
 	return (
 		<span
 			aria-hidden
@@ -34,7 +28,7 @@ function IconButton({
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<Icon label={label}>{children}</Icon>
+			<Icon>{children}</Icon>
 			<span className="sr-only">{label}</span>
 		</Link>
 	);
