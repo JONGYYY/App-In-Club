@@ -42,7 +42,13 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="reveal-up" style={{ animationDelay: "260ms" } as CSSProperties}>
-							<PhoneMock metricValue="10,000+" metricLabel="Students impacted" subLabel="Impact-driven learning • APP‑FOR GOOD" />
+							{/* To use your own image: put it in `public/media/home-iphone.png` and set heroImageSrc="/media/home-iphone.png" */}
+							<PhoneMock
+								metricValue="10,000+"
+								metricLabel="Students impacted"
+								subLabel="Impact-driven learning • APP‑FOR GOOD"
+								heroImageSrc={undefined}
+							/>
 						</div>
 					</div>
 				</Container>

@@ -1,13 +1,18 @@
 import { Placeholder } from "@/components/Placeholder";
+import Image from "next/image";
 
 export function PhoneMock({
 	metricValue = "10,000+",
 	metricLabel = "Students impacted",
 	subLabel = "Impact-driven learning worldwide",
+	heroImageSrc,
+	heroImageAlt = "Hero device visual",
 }: {
 	metricValue?: string;
 	metricLabel?: string;
 	subLabel?: string;
+	heroImageSrc?: string;
+	heroImageAlt?: string;
 }) {
 	return (
 		<div className="relative mx-auto w-full max-w-md">
@@ -21,26 +26,38 @@ export function PhoneMock({
 				}}
 			/>
 
-			{/* Phone */}
+			{/* Visual area */}
 			<div className="relative rounded-[40px] border border-white/60 bg-white/70 shadow-elevation4 backdrop-blur p-3">
 				<div className="relative rounded-[32px] overflow-hidden bg-white shadow-elevation2">
 					{/* Notch */}
 					<div
 						aria-hidden
-						className="absolute left-1/2 top-2 h-5 w-24 -translate-x-1/2 rounded-full bg-[color:var(--blue-900)]/10"
+						className="absolute left-1/2 top-2 h-5 w-24 -translate-x-1/2 rounded-full bg-[color:var(--blue-900)]/10 z-10"
 					/>
 
-					{/* Screen placeholder */}
-					<div className="p-4">
-						<div className="flex items-center gap-2">
-							<div className="h-9 w-9 rounded-xl bg-[color:var(--blue-100)]" aria-hidden />
-							<div className="text-sm font-semibold">APP‑IN Club</div>
+					{heroImageSrc ? (
+						<div className="relative" style={{ aspectRatio: "16 / 10" }}>
+							<Image
+								src={heroImageSrc}
+								alt={heroImageAlt}
+								fill
+								sizes="(min-width: 1024px) 420px, 90vw"
+								className="object-contain"
+								priority
+							/>
 						</div>
-						<div className="mt-4 grid gap-3">
-							<Placeholder label="App screen" aspect="16 / 9" />
-							<Placeholder label="App screen" aspect="16 / 9" />
+					) : (
+						<div className="p-4">
+							<div className="flex items-center gap-2">
+								<div className="h-9 w-9 rounded-xl bg-[color:var(--blue-100)]" aria-hidden />
+								<div className="text-sm font-semibold">APP‑IN Club</div>
+							</div>
+							<div className="mt-4 grid gap-3">
+								<Placeholder label="Drop image into /public/media/home-iphone.png" aspect="16 / 9" />
+								<Placeholder label="or pass heroImageSrc to PhoneMock" aspect="16 / 9" />
+							</div>
 						</div>
-					</div>
+					)}
 				</div>
 			</div>
 
