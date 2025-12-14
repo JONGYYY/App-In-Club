@@ -5,7 +5,6 @@ export const metadata = {
 import { Placeholder } from "@/components/Placeholder";
 import type { CSSProperties } from "react";
 import { SocialBar } from "@/components/SocialBar";
-import { PhoneMock } from "@/components/PhoneMock";
 
 export default function AboutPage() {
 	return (
@@ -39,10 +38,19 @@ export default function AboutPage() {
 							</div>
 						</div>
 						<div className="reveal-up" style={{ animationDelay: "260ms" } as CSSProperties}>
-							{/* Video placeholder (Financia-style visual area) */}
-							<div className="grid gap-4">
-								<Placeholder label="About video" className="w-full hover-raise" aspect="16 / 10" />
-								<PhoneMock metricValue="180+" metricLabel="Apps created" subLabel="Built by students • real-world impact" />
+							<div className="card shadow-elevation3 overflow-hidden">
+								<div className="card-body p-0">
+									<div className="relative" style={{ aspectRatio: "16 / 10" }}>
+										<iframe
+											className="absolute inset-0 h-full w-full"
+											src="https://www.youtube-nocookie.com/embed/exZTTLOj--U"
+											title="APP‑IN Club — About video"
+											frameBorder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+											allowFullScreen
+										/>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
