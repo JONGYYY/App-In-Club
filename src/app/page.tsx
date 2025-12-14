@@ -1,31 +1,63 @@
-import { Hero } from "@/components/Hero";
 import { LinkButton } from "@/components/Button";
 import { EventCard } from "@/components/EventCard";
 import { ProgramCard } from "@/components/ProgramCard";
 import { Stat } from "@/components/Stat";
 import Container from "@/components/Container";
-import { Testimonial } from "@/components/Testimonial";
 import Link from "next/link";
 import { Placeholder } from "@/components/Placeholder";
+import { SocialBar } from "@/components/SocialBar";
+import { ReviewMarquee } from "@/components/ReviewMarquee";
+import type { CSSProperties } from "react";
 
 export default function Home() {
   return (
 		<div className="font-[family-name:var(--font-geist-sans)]">
-			<Hero
-				title={<>APP‑IN Club — A Global Student‑Run Organization</>}
-				subtitle={<>We promote impact‑driven learning: sparking imagination and creating apps to improve the world.</>}
-				actions={
-					<>
-						<LinkButton href="/contact" variant="primary">Join Now</LinkButton>
-						<LinkButton href="/programs/educational-programs" variant="primary">Explore Programs</LinkButton>
-						<LinkButton href="/contact" variant="secondary">Contact Us</LinkButton>
-					</>
-				}
-			/>
-
-			{/* Value props */}
-			<section className="section">
+			<section className="relative overflow-hidden py-14 sm:py-16">
+				<div className="absolute inset-0 animated-gradient" aria-hidden />
+				<div className="absolute -top-10 -left-10 h-64 w-64 rounded-full blur-3xl opacity-25 bg-[color:var(--blue-300)] float-slow" aria-hidden />
+				<div className="absolute -bottom-16 -right-10 h-72 w-72 rounded-full blur-3xl opacity-20 bg-[color:var(--brand)] float-slow" aria-hidden />
 				<Container>
+					<div className="relative grid gap-10 lg:grid-cols-2 items-center">
+						<div>
+							<div className="inline-flex items-center rounded-full bg-white/30 px-3 py-1 text-xs font-semibold text-[color:var(--blue-900)] shadow-elevation1 backdrop-blur">
+								APP‑IN TOGETHER • APP‑FOR GOOD
+							</div>
+							<h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight gradient-text reveal-up" style={{ animationDelay: "100ms" } as CSSProperties}>
+								APP‑IN Club — A Global Student‑Run Organization
+							</h1>
+							<p className="mt-4 text-lg text-muted reveal-up" style={{ animationDelay: "220ms" } as CSSProperties}>
+								We promote impact‑driven learning: sparking imagination and creating apps to improve the world.
+							</p>
+							<div className="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 reveal-up" style={{ animationDelay: "340ms" } as CSSProperties}>
+								<div className="flex flex-wrap gap-3">
+									<LinkButton href="/contact" variant="primary">Join Now</LinkButton>
+									<LinkButton href="/programs" variant="primary">Explore Programs</LinkButton>
+									<LinkButton href="/contact" variant="secondary">Contact Us</LinkButton>
+								</div>
+								<div className="sm:ml-2">
+									<div className="text-xs text-muted mb-2">Connect</div>
+									<SocialBar variant="inline" />
+								</div>
+							</div>
+						</div>
+						<div className="reveal-up" style={{ animationDelay: "260ms" } as CSSProperties}>
+							<Placeholder label="Hero image / collage" className="w-full hover-raise" aspect="16 / 10" />
+						</div>
+					</div>
+				</Container>
+			</section>
+
+			<section className="section-tight">
+				<Container>
+					<div className="max-w-3xl">
+						<div className="text-xs uppercase tracking-wide text-muted">Future of learning</div>
+						<h2 className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight">
+							Our diverse suite of student programs
+						</h2>
+						<p className="mt-2 text-muted">
+							Discover pathways built for students and families: learn app building, compete in challenges, and grow through mentors and community.
+						</p>
+					</div>
 					<div className="grid gap-4 sm:grid-cols-3">
 						<div className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
 							<div className="card-body">
@@ -52,29 +84,20 @@ export default function Home() {
 				</Container>
 			</section>
 
-			{/* Partner/press marquee (placeholder logos) */}
-			<section className="section-tight section-muted">
-				<Container>
-					<div className="marquee-track">
-						<div className="marquee">
-							<Placeholder label="Partner Logo" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="Press" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="Sponsor" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="University" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="Community" className="h-10 w-40" aspect="4 / 1" />
-							{/* duplicate to loop seamlessly */}
-							<Placeholder label="Partner Logo" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="Press" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="Sponsor" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="University" className="h-10 w-40" aspect="4 / 1" />
-							<Placeholder label="Community" className="h-10 w-40" aspect="4 / 1" />
-						</div>
-					</div>
-				</Container>
-			</section>
+			<ReviewMarquee
+				title="More than 10,000+ students impacted"
+				subtitle="A student-run community where learning feels supportive, practical, and fun."
+				reviews={[
+					{ quote: "The workshops were structured and friendly for beginners.", name: "Parent", role: "Member family" },
+					{ quote: "Mentorship + community made building apps feel possible.", name: "Student", role: "Member" },
+					{ quote: "Great prep for competitions and confidence building.", name: "Parent", role: "Member family" },
+					{ quote: "Clear guidance and a positive, high-energy environment.", name: "Student", role: "Member" },
+					{ quote: "Impact-driven learning with real projects — loved it.", name: "Student", role: "Member" },
+				]}
+			/>
 
 			{/* Featured event */}
-			<section className="section section-muted">
+			<section className="section-tight">
 				<Container>
 					<div className="grid gap-6 lg:grid-cols-2 items-start">
 						<Placeholder label="Featured event photo" className="w-full hover-raise reveal-up" style={{ animationDelay: "100ms" }} />
@@ -95,7 +118,7 @@ export default function Home() {
 			</section>
 
 			{/* Programs */}
-			<section className="section">
+			<section className="section-tight section-muted">
 				<Container>
 					<header className="mb-6 sm:mb-8 flex items-end justify-between">
 						<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Programs</h2>
@@ -131,7 +154,7 @@ export default function Home() {
 			</section>
 
 			{/* Stats */}
-			<section className="section section-muted">
+			<section className="section-tight">
 				<Container>
 					<div className="grid gap-4 sm:grid-cols-3">
 						<div className="reveal-up" style={{ animationDelay: "120ms" }}><Stat label="Members across chapters" value="500+" /></div>
@@ -141,28 +164,8 @@ export default function Home() {
 				</Container>
 			</section>
 
-			{/* Testimonials */}
-			<section className="section">
-				<Container>
-					<header className="mb-6 sm:mb-8">
-						<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">What families say</h2>
-					</header>
-					<div className="grid gap-4 sm:grid-cols-3">
-						<div className="reveal-up" style={{ animationDelay: "120ms" }}>
-							<Testimonial quote="The club helped my child fall in love with building apps." name="Parent, CA" role="Member family" />
-						</div>
-						<div className="reveal-up" style={{ animationDelay: "220ms" }}>
-							<Testimonial quote="Mentorship and community made all the difference." name="Student, CA" role="Member" />
-						</div>
-						<div className="reveal-up" style={{ animationDelay: "320ms" }}>
-							<Testimonial quote="Great prep for competitions and confidence building." name="Parent, CA" role="Member family" />
-						</div>
-					</div>
-				</Container>
-			</section>
-
 			{/* News highlights */}
-			<section className="section section-muted">
+			<section className="section-tight section-muted">
 				<Container>
 					<header className="mb-6 sm:mb-8 flex items-end justify-between">
 						<div>
