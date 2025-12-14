@@ -4,34 +4,47 @@ export const metadata = {
 
 import { Placeholder } from "@/components/Placeholder";
 import type { CSSProperties } from "react";
+import { SocialBar } from "@/components/SocialBar";
+import { PhoneMock } from "@/components/PhoneMock";
 
 export default function AboutPage() {
 	return (
 		<div className="font-[family-name:var(--font-geist-sans)]">
-			<section className="section-wide relative overflow-hidden">
+			{/* Financia-inspired compact about hero */}
+			<section className="relative overflow-hidden py-14 sm:py-16">
 				<div className="absolute inset-0 animated-gradient" aria-hidden />
+				<div className="absolute -top-10 -left-10 h-64 w-64 rounded-full blur-3xl opacity-25 bg-[color:var(--blue-300)] float-slow" aria-hidden />
+				<div className="absolute -bottom-16 -right-10 h-72 w-72 rounded-full blur-3xl opacity-20 bg-[color:var(--brand)] float-slow" aria-hidden />
 				<div className="container relative">
-					<div className="max-w-3xl">
-						<h1 className="text-4xl sm:text-5xl font-bold tracking-tight gradient-text reveal-up">About APP‑IN Club</h1>
-						<p className="mt-4 text-lg text-muted reveal-up" style={{ animationDelay: "150ms" }}>
-							App‑In Club is inspired by youth app inventors and coders. We spark imagination and unlock creativity through inquiry‑based, impact‑driven learning — helping students build apps that make a real difference.
-						</p>
-						<div className="mt-6 flex gap-2 reveal-up" style={{ animationDelay: "250ms" } as CSSProperties}>
-							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑IN TOGETHER</span>
-							<span className="Chip inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white px-3 py-1 text-xs">APP‑FOR GOOD</span>
+					<div className="grid gap-10 lg:grid-cols-2 items-center">
+						<div>
+							<div className="inline-flex items-center rounded-full bg-white/30 px-3 py-1 text-xs font-semibold text-[color:var(--blue-900)] shadow-elevation1 backdrop-blur">
+								About APP‑IN Club
+							</div>
+							<h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight gradient-text reveal-up" style={{ animationDelay: "100ms" } as CSSProperties}>
+								Let&rsquo;s APP‑IN together
+							</h1>
+							<p className="mt-4 text-lg text-muted reveal-up" style={{ animationDelay: "220ms" } as CSSProperties}>
+								App‑In Club is inspired by youth app inventors and coders. We spark imagination &amp; curiosity, unlock creativity, and help students create apps with real‑world impact.
+							</p>
+							<div className="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 reveal-up" style={{ animationDelay: "340ms" } as CSSProperties}>
+								<div className="flex flex-wrap gap-2">
+									<span className="inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white/60 px-3 py-1 text-xs">Impact‑driven learning</span>
+									<span className="inline-flex items-center rounded-full border border-[color:var(--blue-200)] bg-white/60 px-3 py-1 text-xs">APP‑FOR GOOD</span>
+								</div>
+								<div className="sm:ml-2">
+									<div className="text-xs text-muted mb-2">Connect</div>
+									<SocialBar variant="inline" />
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Intro media placeholder */}
-			<section className="section">
-				<div className="container">
-					<div className="grid gap-6 lg:grid-cols-2 items-start">
-						<Placeholder label="About video" className="hover-raise reveal-up" style={{ animationDelay: "100ms" } as CSSProperties} />
-						<p className="text-muted reveal-up" style={{ animationDelay: "200ms" }}>
-							In the club, you can learn how to create your own impactful apps aimed at the real world; share your ideas and technology skills with others; and create apps to solve issues such as healthcare, transportation and disaster relief to improve the world.
-						</p>
+						<div className="reveal-up" style={{ animationDelay: "260ms" } as CSSProperties}>
+							{/* Video placeholder (Financia-style visual area) */}
+							<div className="grid gap-4">
+								<Placeholder label="About video" className="w-full hover-raise" aspect="16 / 10" />
+								<PhoneMock metricValue="180+" metricLabel="Apps created" subLabel="Built by students • real-world impact" />
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -77,45 +90,64 @@ export default function AboutPage() {
 
 			<section className="section">
 				<div className="container">
-					<h2 className="text-2xl sm:text-3xl font-bold tracking-tight">What we create</h2>
-					<ul className="mt-4 grid gap-4 sm:grid-cols-2">
-						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "120ms" }}>
-							<div className="card-body text-sm">
-								<Placeholder label="Snap Cook image" className="mb-3" aspect="16 / 9" />
-								Snap Cook — turn food photos into recipes to reduce waste.
+					<header className="flex items-end justify-between gap-4">
+						<div>
+							<div className="text-xs uppercase tracking-wide text-muted">What we create</div>
+							<h2 className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight">Our latest insight &amp; update</h2>
+							<p className="mt-2 text-muted max-w-2xl">Student projects that turn ideas into real-world impact.</p>
+						</div>
+						<span className="site-nav-link">More updates</span>
+					</header>
+					<div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+						<div className="card shadow-elevation1 hover-raise">
+							<div className="card-body">
+								<Placeholder label="Snap Cook" className="mb-3" aspect="16 / 10" />
+								<div className="text-xs text-muted">Project</div>
+								<h3 className="mt-1 font-semibold">Snap Cook</h3>
+								<p className="mt-2 text-sm text-muted">Transforms food photos into recipes to reduce waste.</p>
 							</div>
-						</li>
-						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "160ms" }}>
-							<div className="card-body text-sm">
-								<Placeholder label="Productiviteams image" className="mb-3" aspect="16 / 9" />
-								Productiviteams — MIT Summer Appathon submission.
+						</div>
+						<div className="card shadow-elevation1 hover-raise">
+							<div className="card-body">
+								<Placeholder label="Productiviteams" className="mb-3" aspect="16 / 10" />
+								<div className="text-xs text-muted">Appathon</div>
+								<h3 className="mt-1 font-semibold">Productiviteams</h3>
+								<p className="mt-2 text-sm text-muted">MIT Summer Appathon submission.</p>
 							</div>
-						</li>
-						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "200ms" }}>
-							<div className="card-body text-sm">
-								<Placeholder label="EdBox image" className="mb-3" aspect="16 / 9" />
-								EdBox — sharing and reusing educational resources.
+						</div>
+						<div className="card shadow-elevation1 hover-raise">
+							<div className="card-body">
+								<Placeholder label="EdBox" className="mb-3" aspect="16 / 10" />
+								<div className="text-xs text-muted">Education</div>
+								<h3 className="mt-1 font-semibold">EdBox</h3>
+								<p className="mt-2 text-sm text-muted">Platform to share and reuse educational resources.</p>
 							</div>
-						</li>
-						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "240ms" }}>
-							<div className="card-body text-sm">
-								<Placeholder label="Animal Services image" className="mb-3" aspect="16 / 9" />
-								Animal Services — help for lost or injured animals.
+						</div>
+						<div className="card shadow-elevation1 hover-raise">
+							<div className="card-body">
+								<Placeholder label="Animal Services" className="mb-3" aspect="16 / 10" />
+								<div className="text-xs text-muted">Community</div>
+								<h3 className="mt-1 font-semibold">Animal Services App</h3>
+								<p className="mt-2 text-sm text-muted">Helps people when animals are lost or hurt.</p>
 							</div>
-						</li>
-						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "280ms" }}>
-							<div className="card-body text-sm">
-								<Placeholder label="iHELP image" className="mb-3" aspect="16 / 9" />
-								iHELP — safe cities: alerts to nearby helpers when needed.
+						</div>
+						<div className="card shadow-elevation1 hover-raise">
+							<div className="card-body">
+								<Placeholder label="iHELP" className="mb-3" aspect="16 / 10" />
+								<div className="text-xs text-muted">Safety</div>
+								<h3 className="mt-1 font-semibold">iHELP</h3>
+								<p className="mt-2 text-sm text-muted">Alerts nearby helpers when someone needs help.</p>
 							</div>
-						</li>
-						<li className="card shadow-elevation1 hover-raise reveal-up" style={{ animationDelay: "320ms" }}>
-							<div className="card-body text-sm">
-								<Placeholder label="Garbage Sort image" className="mb-3" aspect="16 / 9" />
-								Garbage Sort — high‑efficiency waste sorting and processing.
+						</div>
+						<div className="card shadow-elevation1 hover-raise">
+							<div className="card-body">
+								<Placeholder label="Garbage Sort" className="mb-3" aspect="16 / 10" />
+								<div className="text-xs text-muted">Sustainability</div>
+								<h3 className="mt-1 font-semibold">Garbage Sort</h3>
+								<p className="mt-2 text-sm text-muted">High-efficiency solution for future garbage processing.</p>
 							</div>
-						</li>
-					</ul>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>

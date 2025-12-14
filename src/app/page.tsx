@@ -8,6 +8,7 @@ import { Placeholder } from "@/components/Placeholder";
 import { SocialBar } from "@/components/SocialBar";
 import { ReviewMarquee } from "@/components/ReviewMarquee";
 import type { CSSProperties } from "react";
+import { PhoneMock } from "@/components/PhoneMock";
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="reveal-up" style={{ animationDelay: "260ms" } as CSSProperties}>
-							<Placeholder label="Hero image / collage" className="w-full hover-raise" aspect="16 / 10" />
+							<PhoneMock metricValue="10,000+" metricLabel="Students impacted" subLabel="Impact-driven learning • APP‑FOR GOOD" />
 						</div>
 					</div>
 				</Container>
